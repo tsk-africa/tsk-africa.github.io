@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSK Equipment Service and Machinery Trading LLC | Industrial Machinery, Africa</title>
+    <meta name="description" content="TSK Equipment Service and Machinery Trading LLC, Africa. Plasma, laser and water jet cutting machines, welding machinery and spare parts.">
+    <link rel="preload" as="image" href="logo.jpg">
+    <style>
+        :root {
+            --navy: #0a1f44;
+            --deep: #06173a;
+            --blue: #1565c0;
+            --accent: #ff7a00;
+            --light: #f4f7fb;
+            --text: #1d2733;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); background: var(--light); line-height: 1.6; }
+
+        /* ---------- NAV ---------- */
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: var(--navy);
+            display: flex; justify-content: center; flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,.3);
+        }
+        nav a {
+            color: #fff; text-decoration: none; padding: 16px 24px;
+            font-weight: 600; letter-spacing: .5px; transition: .3s;
+            border-bottom: 3px solid transparent;
+        }
+        nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            min-height: 78vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; color: #fff; padding: 50px 20px;
+            background: linear-gradient(135deg, #06173a 0%, #0a2a5e 55%, #0d3d82 100%);
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ""; position: absolute; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='80' viewBox='0 0 130 80'%3E%3Cg fill='white' fill-opacity='.10' font-family='Arial,Helvetica,sans-serif' font-weight='800' font-size='24' letter-spacing='4'%3E%3Ctext x='4' y='30'%3ETSK%3C/text%3E%3Ctext x='68' y='70'%3ETSK%3C/text%3E%3C/g%3E%3C/svg%3E");
+            background-size: 130px 80px;
+            animation: drift 40s linear infinite;
+        }
+        .hero::after {
+            content: ""; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 50% 35%, rgba(255,255,255,.14), transparent 60%),
+                linear-gradient(to bottom, transparent 65%, rgba(6,23,58,.7));
+        }
+        @keyframes drift { to { background-position: 130px 80px; } }
+        .hero > * { position: relative; z-index: 1; }
+
+        .logo-box {
+            background: #fff; padding: 14px 26px; border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.4);
+            margin-bottom: 28px;
+        }
+        .logo-box img { height: 110px; width: auto; max-width: 100%; display: block; }
+        .hero h1 { font-size: clamp(26px, 5vw, 48px); letter-spacing: 1px; color: #fff; text-shadow: 0 3px 14px rgba(0,0,0,.35); max-width: 1000px; }
+        .hero p.tag { font-size: clamp(16px, 2.2vw, 21px); max-width: 700px; margin: 16px 0 30px; opacity: .92; }
+        .btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+        .btn {
+            display: inline-block; padding: 14px 32px; border-radius: 40px;
+            text-decoration: none; font-weight: 700; transition: .3s; cursor: pointer; border: 0; font-size: 16px; font-family: inherit;
+        }
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-primary:hover { background: #e06a00; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,.3); }
+        .btn-outline { border: 2px solid #fff; color: #fff; background: transparent; }
+        .btn-outline:hover { background: #fff; color: var(--navy); transform: translateY(-3px); }
+
+        /* ---------- GENERIC SECTION ---------- */
+        section { padding: 80px 20px; }
+        .container { max-width: 1150px; margin: 0 auto; }
+        .title { text-align: center; margin-bottom: 50px; }
+        .title h2 { font-size: 36px; color: var(--navy); }
+        .title .line { width: 70px; height: 4px; background: var(--accent); margin: 12px auto 0; border-radius: 4px; }
+        .title p { margin-top: 14px; color: #5a6877; }
+
+        /* ---------- CONTACT STRIP ---------- */
+        #contact-info { background: #fff; padding: 50px 20px; margin-top: -1px; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+        .info-card {
+            background: var(--light); border-radius: 14px; padding: 28px 22px; text-align: center;
+            border-top: 4px solid var(--accent); transition: .3s;
+        }
+        .info-card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(10,31,68,.15); }
+        .info-card .icon { font-size: 34px; }
+        .info-card h3 { color: var(--navy); margin: 10px 0 8px; }
+        .info-card a { color: var(--blue); text-decoration: none; font-weight: 600; }
+        .info-card a:hover { text-decoration: underline; }
+
+        /* ---------- ABOUT ---------- */
+        #about { background: var(--light); }
+        .about-text { max-width: 850px; margin: 0 auto 50px; text-align: center; font-size: 18px; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 22px; }
+        .stat {
+            background: linear-gradient(135deg, var(--navy), var(--blue));
+            color: #fff; border-radius: 14px; padding: 30px 20px; text-align: center;
+        }
+        .stat strong { display: block; font-size: 40px; color: var(--accent); }
+        .stat strong.small { font-size: 30px; }
+        .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-top: 50px; }
+        .why div { background: #fff; padding: 26px; border-radius: 14px; box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+        .why h3 { color: var(--navy); margin-bottom: 8px; }
+
+        /* ---------- PRODUCTS ---------- */
+        #products { background: #fff; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+        .card {
+            position: relative; min-height: 440px; border-radius: 16px; overflow: hidden;
+            color: #fff; display: flex; align-items: flex-end;
+            background-color: var(--navy); background-size: cover; background-position: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,.2); transition: transform .4s, box-shadow .4s;
+        }
+        .card::before {
+            content: ""; position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(6,23,58,.97) 40%, rgba(6,23,58,.55) 75%, rgba(6,23,58,.25) 100%);
+        }
+        .card { border: 3px solid transparent; cursor: pointer; }
+        .card::before { transition: background .4s; }
+        .card:hover, .card:focus-within {
+            transform: translateY(-10px) scale(1.03);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(255,122,0,.25), 0 22px 44px rgba(255,122,0,.35);
+            z-index: 2;
+        }
+        .card:hover::before, .card:focus-within::before {
+            background: linear-gradient(to top, rgba(6,23,58,.92) 35%, rgba(6,23,58,.35) 75%, rgba(6,23,58,.05) 100%);
+        }
+        .card:hover h3, .card:focus-within h3 { color: #ffa733; }
+        .card:hover .b-learn, .card:focus-within .b-learn { background: #fff; color: var(--navy); }
+        .grid:hover .card:not(:hover) { filter: brightness(.6) saturate(.7); transform: scale(.98); }
+        .card { transition: transform .35s, box-shadow .35s, border-color .35s, filter .35s; }
+        .card { isolation: isolate; background-image: linear-gradient(135deg, #06173a, #0d3d82); }
+        .card::before { z-index: 1; }
+        .card-bg {
+            position: absolute; inset: 0; z-index: 0;
+            background-size: cover; background-position: center;
+            opacity: 0; transition: opacity .7s ease;
+        }
+        .card-bg.ready { opacity: 1; }
+        .card .content { position: relative; z-index: 2; padding: 26px; width: 100%; }
+        .card h3 { font-size: 23px; margin-bottom: 6px; line-height: 1.25; }
+        .card .spec { color: #ffa733; font-weight: 700; font-size: 16px; margin-bottom: 8px; }
+        .card p { font-size: 15px; opacity: .95; margin-bottom: 18px; }
+        .card .actions { display: flex; gap: 10px; }
+        .card .actions button { flex: 1; padding: 12px 10px; font-size: 15px; border-radius: 40px; font-weight: 700; cursor: pointer; font-family: inherit; transition: .3s; }
+        .b-learn { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.8); }
+        .b-learn:hover { background: #fff; color: var(--navy); }
+        .b-inq { background: #2f55d4; color: #fff; border: 2px solid #2f55d4; }
+        .b-inq:hover { background: #1f3fb0; border-color: #1f3fb0; }
+
+        /* ---------- DIALOGS ---------- */
+        dialog {
+            border: 0; border-radius: 16px; padding: 0; width: calc(100% - 24px); max-width: 800px;
+            max-height: 90vh; margin: auto; color: var(--text); box-shadow: 0 20px 60px rgba(0,0,0,.45);
+        }
+        dialog::backdrop { background: rgba(6,20,46,.72); backdrop-filter: blur(3px); }
+        .dlg-in { padding: 30px 28px 26px; position: relative; }
+        .x {
+            position: absolute; top: 10px; right: 14px; border: 0; background: none;
+            font-size: 34px; line-height: 1; cursor: pointer; color: #5a6877;
+        }
+        .x:hover { color: var(--accent); }
+        .dlg-in h3 { color: var(--navy); font-size: 25px; padding-right: 30px; }
+        .dlg-in .spec { color: #e06a00; font-weight: 700; margin: 4px 0 14px; }
+        .dlg-in h4 { color: var(--navy); margin: 18px 0 8px; font-size: 17px; }
+        .dlg-in ul { padding-left: 20px; }
+        .dlg-in li { margin-bottom: 6px; }
+        .dlg-in table { width: 100%; border-collapse: collapse; font-size: 15px; }
+        .dlg-in td { padding: 9px 10px; border-bottom: 1px solid #e3e9f1; vertical-align: top; }
+        .dlg-in td:first-child { font-weight: 700; color: var(--navy); width: 32%; background: var(--light); }
+        .dlg-in .note { font-size: 13px; color: #6b7785; margin-top: 12px; }
+        .variant { border: 1px solid #dbe3ee; border-radius: 14px; padding: 18px; margin-top: 20px; background: #fbfcfe; }
+        .variant img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: var(--light); border-radius: 10px; margin-bottom: 12px; display: block; }
+        .variant h4.vname { margin-top: 0; font-size: 20px; }
+        .dlg-in .main-img { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; background: var(--light); border-radius: 12px; margin: 6px 0 14px; display: block; }
+        .dlg-actions { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+        .dlg-actions .btn { padding: 12px 26px; }
+        .btn-blue { background: #2f55d4; color: #fff; }
+        .btn-blue:hover { background: #1f3fb0; }
+        .btn-green { background: #25d366; color: #fff; }
+        .btn-green:hover { background: #1db955; }
+        .btn-grey { background: #e8edf4; color: var(--navy); }
+        .btn-grey:hover { background: #d6deea; }
+        /* result screen after sending */
+        .res { display: none; text-align: center; padding: 18px 6px 6px; }
+        #enqDlg.done .res { display: block; animation: pop .35s ease; }
+        #enqDlg.done .enq-main { display: none; }
+        .res h3 { margin: 14px 0 6px; padding: 0; font-size: 26px; }
+        .res.ok h3 { color: #17a34a; }
+        .res.bad h3 { color: #d93025; }
+        .res p { max-width: 420px; margin: 0 auto; color: #4a5766; }
+        .res .icon-wrap svg { width: 92px; height: 92px; }
+        .res .c { fill: none; stroke-width: 3; stroke-dasharray: 152; stroke-dashoffset: 152; animation: draw .6s ease forwards; }
+        .res .p { fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 40; stroke-dashoffset: 40; animation: draw .4s .5s ease forwards; }
+        .res.ok .c, .res.ok .p { stroke: #17a34a; }
+        .res.bad .c, .res.bad .p { stroke: #d93025; }
+        .res .bar { height: 5px; background: #e3e9f1; border-radius: 5px; overflow: hidden; margin: 20px auto 6px; max-width: 260px; }
+        .res .bar i { display: block; height: 100%; background: #17a34a; transform-origin: left; animation: shrink 4s linear forwards; }
+        .res.bad .bar, .res.bad .auto { display: none; }
+        .res .auto { font-size: 13px; color: #6b7785; }
+        .res .dlg-actions { justify-content: center; }
+        @keyframes draw { to { stroke-dashoffset: 0; } }
+        @keyframes shrink { to { transform: scaleX(0); } }
+        @keyframes pop { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+        .spin { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: rot .7s linear infinite; vertical-align: -2px; margin-right: 6px; }
+        @keyframes rot { to { transform: rotate(360deg); } }
+        .toast { position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 30px); background: #17a34a; color: #fff; padding: 13px 22px; border-radius: 40px; font-weight: 700; box-shadow: 0 8px 24px rgba(0,0,0,.3); opacity: 0; pointer-events: none; transition: .4s; z-index: 300; }
+        .toast.show { opacity: 1; transform: translate(-50%, 0); }
+        form label { display: block; font-weight: 600; margin: 12px 0 4px; color: var(--navy); font-size: 14px; }
+        form input, form textarea {
+            width: 100%; padding: 11px 12px; border: 1px solid #c9d3e0; border-radius: 8px;
+            font: inherit; background: #fff;
+        }
+        form input:focus, form textarea:focus { outline: 2px solid #2f55d4; border-color: transparent; }
+        form input[readonly] { background: var(--light); }
+        .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+        /* ---------- CTA ---------- */
+        .cta { background: linear-gradient(135deg, var(--navy), var(--blue)); color: #fff; text-align: center; }
+        .cta h2 { font-size: 34px; margin-bottom: 12px; }
+        .cta p { margin-bottom: 26px; opacity: .9; }
+
+        footer { background: #06142e; color: #cfd8e6; text-align: center; padding: 26px 15px; font-size: 14px; }
+
+        .wa-wrap { position: fixed; right: 20px; bottom: 20px; z-index: 200; text-align: right; }
+        .wa-menu {
+            display: none; background: #fff; border-radius: 14px; padding: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.3); margin-bottom: 10px; text-align: left;
+        }
+        .wa-menu.open { display: block; }
+        .wa-menu a { display: block; padding: 11px 16px; color: var(--navy); font-weight: 700; text-decoration: none; border-radius: 8px; white-space: nowrap; }
+        .wa-menu a:hover { background: #e9f9ef; color: #128c4a; }
+        .wa {
+            border: 0; cursor: pointer; font-family: inherit; font-size: 16px;
+            background: #25d366; color: #fff; text-decoration: none;
+            padding: 14px 20px; border-radius: 40px; font-weight: 700;
+            box-shadow: 0 6px 18px rgba(0,0,0,.3); transition: .3s;
+        }
+        .wa:hover { transform: scale(1.08); }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s, transform .8s; }
+        .reveal.show { opacity: 1; transform: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero::before { animation: none; }
+            .res .c, .res .p { animation: none; stroke-dashoffset: 0; }
+            .res .bar i { animation-duration: 4s; }
+            .reveal { opacity: 1; transform: none; transition: none; }
+        }
+        @media (max-width: 600px) {
+            nav a { padding: 12px 14px; font-size: 14px; }
+            section { padding: 55px 16px; }
+            .logo-box img { height: 80px; }
+            .row2 { grid-template-columns: 1fr; }
+            .dlg-in { padding: 26px 18px 20px; }
+            .card { min-height: 450px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#contact-info">Contact</a>
+        <a href="#about">About Us</a>
+        <a href="#products">Our Products</a>
+    </nav>
+
+    <!-- 1. LOGO + COMPANY NAME -->
+    <header class="hero" id="home">
+        <div class="logo-box">
+            <img src="logo.jpg" alt="TSK Equipment Service and Machinery Trading LLC Logo">
+        </div>
+        <h1>TSK Equipment Service and Machinery Trading LLC</h1>
+        <p class="tag">Your trusted partner for high-quality industrial machinery and spare parts in Africa.</p>
+        <div class="btns">
+            <a href="#products" class="btn btn-primary">View Our Products</a>
+            <a href="tel:+2349128167686" class="btn btn-outline">Call Us Now</a>
+        </div>
+    </header>
+
+    <!-- 2. ADDRESS AND CONTACT DETAILS -->
+    <section id="contact-info">
+        <div class="container">
+            <div class="info-grid reveal">
+                <div class="info-card">
+                    <div class="icon">📍</div>
+                    <h3>Office Address</h3>
+                    <p>Lagos, Nigeria</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon">📞</div>
+                    <h3>Mobile</h3>
+                    <p><a href="tel:+2349128167686">+234 912 816 7686</a></p>
+                </div>
+                <div class="info-card">
+                    <div class="icon">✉️</div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:tsktrading2027@gmail.com">tsktrading2027@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT US -->
+    <section id="about">
+        <div class="container">
+            <div class="title reveal">
+                <h2>About Us</h2>
+                <div class="line"></div>
+            </div>
+            <p class="about-text reveal">
+                TSK Equipment Service and Machinery Trading LLC is committed to delivering cutting-edge industrial solutions.
+                We specialize in premium quality machinery and spare parts, supporting fabrication workshops,
+                factories and contractors with reliable equipment and expert advice.
+            </p>
+            <div class="stats reveal">
+                <div class="stat"><strong>20+</strong>Years of Experience</div>
+                <div class="stat"><strong>6</strong>Machinery Categories</div>
+                <div class="stat"><strong class="small">8 am to 5 pm</strong>Mon to Sat Customer Support</div>
+            </div>
+            <div class="why reveal">
+                <div>
+                    <h3>Expert Team</h3>
+                    <p>Our team has over 20 years of experience in the industry, providing expert solutions and high-quality service.</p>
+                </div>
+                <div>
+                    <h3>After-Sales Support</h3>
+                    <p>We ensure top-notch after-sales support and quick response times for all our clients.</p>
+                </div>
+                <div>
+                    <h3>Customer Satisfaction</h3>
+                    <p>Customer satisfaction is our priority, and we strive to exceed expectations in every project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. OUR PRODUCTS (cards are built from the list in the script below) -->
+    <section id="products">
+        <div class="container">
+            <div class="title reveal">
+                <h2>Our Products &amp; Services</h2>
+                <div class="line"></div>
+                <p>Top-quality machinery for a wide range of industrial applications. Click Learn More for details or Inquiry to request a quotation.</p>
+            </div>
+            <div class="grid" id="productGrid"></div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container reveal">
+            <h2>Need a Quote or Technical Advice?</h2>
+            <p>Contact our team today and tell us your requirement.</p>
+            <button class="btn btn-primary" id="generalInquiry">Send Enquiry</button>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 TSK Equipment Service and Machinery Trading LLC. All Rights Reserved.
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <div class="wa-wrap">
+        <div class="wa-menu" id="waMenu"></div>
+        <button type="button" class="wa" id="waBtn" aria-haspopup="true" aria-expanded="false">💬 WhatsApp</button>
+    </div>
+
+    <!-- LEARN MORE POP-UP -->
+    <dialog id="detailDlg">
+        <div class="dlg-in">
+            <button class="x" data-close aria-label="Close">&times;</button>
+            <div id="detailBody"></div>
+        </div>
+    </dialog>
+
+    <!-- INQUIRY POP-UP -->
+    <dialog id="enqDlg">
+        <div class="dlg-in">
+            <button class="x" data-close aria-label="Close">&times;</button>
+            <div class="enq-main">
+            <h3>Send an Inquiry</h3>
+            <p class="spec">We reply as soon as possible</p>
+            <form id="enqForm" onsubmit="return false">
+                <label for="fProduct">Product</label>
+                <input id="fProduct" readonly>
+                <div class="row2">
+                    <div><label for="fName">Your name *</label><input id="fName" required></div>
+                    <div><label for="fPhone">Phone / WhatsApp</label><input id="fPhone" type="tel"></div>
+                </div>
+                <label for="fEmail">Email</label>
+                <input id="fEmail" type="email">
+                <label for="fMsg">Your requirement</label>
+                <textarea id="fMsg" rows="4" placeholder="Machine size, material and thickness, quantity, delivery location..."></textarea>
+                <div class="dlg-actions">
+                    <button type="button" class="btn btn-blue" id="sendBtn">Send Inquiry</button>
+                </div>
+            </form>
+            </div>
+            <div class="res" id="enqRes" role="status" aria-live="polite">
+                <div class="icon-wrap" id="resIcon"></div>
+                <h3 id="resTitle"></h3>
+                <p id="resMsg"></p>
+                <div class="bar"><i></i></div>
+                <p class="auto">This window will close automatically.</p>
+                <div class="dlg-actions" id="resActions"></div>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+        // ============ COMPANY CONTACT (change numbers here only) ============
+        const MAIL_TO = "tsktrading2027@gmail.com";
+        // WhatsApp numbers for the corner button. With ONE number the button opens that chat directly;
+        // add a second line and the button shows both numbers to choose from.
+        const WA_NUMBERS = [
+            { num: "2349128167686", label: "+234 912 816 7686" }
+        ];
+
+        // ============ PRODUCT LIST (edit text here) ============
+        const PRODUCTS = [
+            {
+                title: "Plasma Cutting Machines",
+                spec: "Plasma & oxyfuel cutting · up to 300 mm",
+                desc: "High-speed CNC plasma cutting for steel, stainless steel and aluminium plate with clean, precise edges.",
+                bg: "url('plasma_cutting_out.jpeg')",
+                intro: "We supply two plasma cutting machine models:",
+                variants: [
+                    {
+                        name: "ELEMENT 400", img: "plasma_cutting_in.jpeg",
+                        desc: "Flexible CNC plate processing machine for plasma and oxyfuel cutting, with high-speed lifters and optional bevel units.",
+                        highlights: [
+                            "Precision plasma cutting of mild steel, stainless steel and aluminium (non-ferrous up to 150 mm)",
+                            "Oxyfuel cutting of thick carbon steel plate, material up to 300 mm",
+                            "Up to six torch stations (maximum two plasma stations)",
+                            "Optional plasma bevel units (Bevel-R / Bevel-S) with ±45° bevel angles for weld preparation",
+                            "Optional marking: ink-jet, pin marker or plasma marker; laser pointer or camera for plate alignment",
+                            "Windows-based CNC control with remote diagnostics; nesting and production software available",
+                            "Safety options: light curtains, fume-extraction cutting tables"
+                        ],
+                        specs: [
+                            ["Cutting width", "1600 mm to 4100 mm"],
+                            ["Cutting length", "Up to 47,000 mm"],
+                            ["Max. material thickness", "Up to 300 mm"],
+                            ["Machine accuracy", "Below 0.1 mm accuracy and repeatability"],
+                            ["Positioning speed", "24 m/min (plasma and oxyfuel)"],
+                            ["Cutting processes", "Plasma, oxyfuel; laser and bevel options"]
+                        ]
+                    },
+                    {
+                        name: "MULTITHERM PRO", img: "3-multitherm-pro-2.jpg",
+                        desc: "Industry 4.0 ready gantry cutting machine for plasma and oxyfuel, with a rigid beam on LM guides for stable, reliable cutting.",
+                        highlights: [
+                            "Fast positioning at 24 m/min with 0.04 g acceleration to reduce cycle time",
+                            "Digital servo AC drives with precision gearboxes on X and Y axes",
+                            "Up to six tool stations, with up to two plasma straight-cutting stations",
+                            "Oxyfuel cutting of carbon steel up to 300 mm; plasma up to 150 mm on non-ferrous material",
+                            "Optional Bevel-R plasma bevel unit, manual bevels and pipe cutting attachment (round pipes and square tubes)",
+                            "Automatic gas regulation (optional) removes manual gas setting",
+                            "Reliable height control for longer nozzle life and quality cuts"
+                        ],
+                        specs: [
+                            ["Track gauge", "3100 / 3600 / 4000 / 5000 / 6000 mm"],
+                            ["Working width", "2000 / 2500 / 3000 / 4000 / 5000 mm"],
+                            ["Overall width", "4430 mm to 7330 mm"],
+                            ["Overall height", "2360 mm"],
+                            ["Positioning speed", "24 m/min, 0.04 g acceleration"],
+                            ["Software", "Nesting and IoT software available (optional)"]
+                        ],
+                        note: "Working width applies to machines with vertical torch units and one tool per plate. Other sizes on request."
+                    }
+                ]
+            },
+            {
+                title: "Water Jet Cutting Machines",
+                spec: "Cold cutting – no heat-affected zone",
+                desc: "Cold-cutting technology for metal, stone, glass and composites with no heat-affected zone.",
+                bg: "url('water_jet_out.jpeg')",
+                img: "water_jet_in.jpeg",
+                highlights: [
+                    "Cold cutting with no heat-affected zone and no thermal distortion",
+                    "Cuts metals, stone, glass and composite materials",
+                    "Accurate contour cutting of complex shapes",
+                    "Table size and pump capacity chosen to suit your work"
+                ],
+                specs: [
+                    ["Cutting method", "Cold cutting (water jet)"],
+                    ["Materials", "Metal, stone, glass, composites"],
+                    ["Configuration", "Tailored to your requirement – contact us"]
+                ]
+            },
+            {
+                title: "Drilling & Plasma Cutting Machines",
+                spec: "Drilling and cutting in one system",
+                desc: "Combined drilling and cutting systems for structural steel, plates and fabrication work.",
+                bg: "url('DrillingandPlasmaCuttingMachine.jpg')",
+                img: "DrillingandPlasmaCuttingMachine.jpg",
+                highlights: [
+                    "Drilling and plasma cutting on one machine for plate and structural steel work",
+                    "Plasma cutting of mild steel, stainless steel and aluminium",
+                    "Suited to fabrication workshops that need holes and profiles in the same setup",
+                    "Table size, drilling capacity and plasma power selected to your requirement"
+                ],
+                specs: [
+                    ["Operations", "Drilling and plasma cutting"],
+                    ["Materials", "Mild steel, stainless steel, aluminium"],
+                    ["Configuration", "Tailored to your requirement – contact us"]
+                ]
+            },
+            {
+                title: "Laser Cutting Machines",
+                spec: "Mild steel · Stainless steel · Aluminium",
+                desc: "Fiber laser cutting for fast, accurate and detailed sheet metal processing.",
+                bg: "url('laser_cutting_out.jpeg')",
+                img: "laser_cutting_in.jpeg",
+                highlights: [
+                    "Precision laser cutting of mild steel, stainless steel and aluminium",
+                    "Clean cut edges significantly reduce secondary operations",
+                    "Suitable for cutting long plates",
+                    "Choice of fiber laser sources on request",
+                    "Optional laser bevel head with ±45° angles for I, V, Y, X and K weld profiles",
+                    "Nesting and work-preparation software available"
+                ],
+                specs: [
+                    ["Materials", "Mild steel, stainless steel, aluminium"],
+                    ["Laser source", "Fiber laser, on request"],
+                    ["Positioning speed", "Up to 50 m/min (laser and bevel configurations)"],
+                    ["Bevel cutting", "Optional, ±45°"],
+                    ["Power and bed size", "Selected to your requirement"]
+                ]
+            },
+            {
+                title: "Welding Machinery",
+                spec: "MIG/MAG · TIG · MMA · Engine driven",
+                desc: "MIG, TIG and arc welding equipment built for heavy-duty industrial use, from portable machines to engine-driven welders.",
+                bg: "url('WeldingMachinery.jpg')",
+                intro: "We supply two welding machinery ranges:",
+                variants: [
+                    {
+                        name: "MIG/MAG, TIG & MMA Welding Machines", img: "WeldingMachinery.jpg",
+                        desc: "Professional welding equipment from portable stick machines to heavy-duty industrial MIG/MAG systems, with guns, torches and accessories.",
+                        highlights: [
+                            "Portable machines for site work up to industrial systems for shipyards, offshore and pipelines",
+                            "Pulse and multi-process MIG/MAG for thin sheet to thick plate",
+                            "SuperSnake distance wire feeder gives extended reach",
+                            "ArcFeed lets existing MMA or generator power sources run productive MIG/MAG welding",
+                            "Welding software (WiseRoot, WiseFusion, WiseThin) for root passes, thin sheet and out-of-position welding",
+                            "Remote controls, transport units, gun and torch spares, equipment validation tools"
+                        ],
+                        specs: [
+                            ["MIG/MAG", "MinarcMig Evo 170/200 A · Kempact RA 180–320 A · FastMig M 320–520 A · FastMig X 350/450 A · FitWeld Evo 300 · Kempact Pulse 3000"],
+                            ["TIG", "MinarcTig Evo 200 A · MasterTig MLS 300/400 A · MasterTig MLS ACDC 230/300 A · MasterTig ACDC 3500W · MasterTig LT 250"],
+                            ["MMA (stick)", "Minarc 150 Classic · Minarc Evo 180 · Minarc 220 · Master MLS 250/350 A · Master S 400/500 A"],
+                            ["Gouging", "KempGouge ARC 800 – 800 A at 50 % duty"],
+                            ["Guns and torches", "MIG/MAG guns 3–8 m · TIG torches 4–16 m · consumables"]
+                        ]
+                    },
+                    {
+                        name: "Engine Driven Welders", img: "weldingmachinenew.png",
+                        desc: "Silenced engine-driven welders for site, pipeline and workshop use. Weld and run auxiliary power from one machine.",
+                        highlights: [
+                            "Stick, TIG, MIG/MAG and flux-cored welding on multi-process models",
+                            "Auxiliary single-phase and three-phase power for tools while welding on most models",
+                            "Power Optimizer prevents engine overload; auto idle saves fuel on compact models",
+                            "Voltage reduction device, engine protection and ground fault interrupter on many models",
+                            "Dual-operator models: DSP 2x400 PS and TS 2x280 EVO MULTI4",
+                            "Arc gouging socket and base-current circuit for vertical-down pipe welding on selected models",
+                            "Made in Italy, ISO 9001 certified manufacturing"
+                        ],
+                        specs: [
+                            ["Welding current", "20 A to 600 A, petrol and diesel engines"],
+                            ["Compact welders", "New Magic Weld, Magic Weld 200, TS 200 series, TS 250 KD/EL – 30 A to 250 A"],
+                            ["Power welders", "CS 230, CS 350, TS 300 to TS 600 – up to 600 A, diesel"],
+                            ["Digital DSP", "DSP 400 YSX, 500 PS, 600 PS – stick, TIG, MIG/MAG; DSP 2x400 PS dual operator"],
+                            ["TS EVO", "TS 300 / 400 / 600 EVO – stick and scratch-start TIG"],
+                            ["TS EVO MULTI4", "TS 400 / 600 EVO MULTI4 and TS 2x280 EVO MULTI4 – multi-process"],
+                            ["Engines", "Honda, Yanmar, Kohler, Perkins, Deutz, Kubota"]
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Spare Parts & Consumables",
+                spec: "Nozzles · Contact tips · Electrodes · Liners",
+                desc: "Nozzles, electrodes, torches, lenses and other parts to keep your machines running.",
+                bg: "url('spare_part_out.jpeg')",
+                img: "spare_part_out.jpeg",
+                highlights: [
+                    "MIG/MAG gun parts: gas nozzles, contact tips, contact tip adapters, gas diffusers, insulating bushes",
+                    "Wire liners: steel spiral and low-friction Teflon liners for steel, stainless steel and aluminium wire",
+                    "TIG torch parts: gas nozzles, gas lenses, electrodes, tightening bushes, electrode shields",
+                    "Wire feed roll kits for steel, stainless steel, aluminium and cored wires",
+                    "Welding accessories: earth clamps, electrode holders, cable connectors, remote controls",
+                    "Parts for plasma, laser and water jet machines on request"
+                ],
+                specs: [
+                    ["Contact tips", "M8 tips for 0.8–3.2 mm wire; M6 tips for 0.6–1.6 mm wire"],
+                    ["Wire liners", "For MIG/MAG guns of 3 m to 8 m"],
+                    ["Clamps and holders", "Earth clamps and electrode holders, 200 A to 600 A"],
+                    ["Other machines", "Consumables for cutting machines on request"]
+                ]
+            }
+        ];
+
+        // ============ BUILD CARDS ============
+        const grid = document.getElementById('productGrid');
+        grid.innerHTML = PRODUCTS.map((p, i) => `
+            <article class="card reveal">
+                <div class="card-bg" style="background-image:${p.bg}"></div>
+                <div class="content">
+                    <h3>${p.title}</h3>
+                    <div class="spec">${p.spec}</div>
+                    <p>${p.desc}</p>
+                    <div class="actions">
+                        <button class="b-learn" data-learn="${i}">Learn More</button>
+                        <button class="b-inq" data-inq="${i}">Inquiry</button>
+                    </div>
+                </div>
+            </article>`).join('');
+
+        // Show each card picture only after it has fully loaded (no blinking), then pre-load pop-up pictures
+        document.querySelectorAll('.card-bg').forEach(el => {
+            const m = el.style.backgroundImage.match(/url\(["']?(.*?)["']?\)/);
+            const show = () => el.classList.add('ready');
+            if (!m) { show(); return; }
+            const im = new Image();
+            im.onload = im.onerror = show;
+            im.src = m[1];
+            if (im.complete) show();
+            setTimeout(show, 4000);
+        });
+        window.addEventListener('load', () => {
+            PRODUCTS.forEach(p => [p.img, ...(p.variants || []).map(v => v.img)].filter(Boolean).forEach(src => { new Image().src = src; }));
+        });
+
+        // ============ POP-UPS ============
+        const detailDlg = document.getElementById('detailDlg');
+        const enqDlg = document.getElementById('enqDlg');
+        const detailBody = document.getElementById('detailBody');
+
+        const list = a => `<ul>${a.map(h => `<li>${h}</li>`).join('')}</ul>`;
+        const table = a => `<table>${a.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</table>`;
+
+        function openDetail(i) {
+            const p = PRODUCTS[i];
+            let body = `<h3>${p.title}</h3><div class="spec">${p.spec}</div><p>${p.desc}</p>`;
+            if (p.variants) {
+                body += `<p>${p.intro}</p>`;
+                body += p.variants.map((v, j) => `
+                    <div class="variant">
+                        <img src="${v.img}" alt="${v.name}" onerror="this.style.display='none'">
+                        <h4 class="vname">${v.name}</h4>
+                        <p>${v.desc}</p>
+                        <h4>Key features</h4>${list(v.highlights)}
+                        <h4>Specifications</h4>${table(v.specs)}
+                        ${v.note ? `<p class="note">${v.note}</p>` : ''}
+                        <div class="dlg-actions"><button class="btn btn-blue" data-inq="${i}" data-v="${j}">Inquiry for ${v.name}</button></div>
+                    </div>`).join('');
+                body += `<p class="note">Specifications are for guidance and may change. Contact us to confirm the exact model and configuration.</p>
+                         <div class="dlg-actions"><button class="btn btn-grey" data-close>Close</button></div>`;
+            } else {
+                body += `${p.img ? `<img class="main-img" src="${p.img}" alt="${p.title}" onerror="this.style.display='none'">` : ''}
+                         <h4>Key features</h4>${list(p.highlights)}
+                         <h4>Specifications</h4>${table(p.specs)}
+                         ${p.note ? `<p class="note">${p.note}</p>` : ''}
+                         <p class="note">Specifications are for guidance and may change. Contact us to confirm the exact model and configuration.</p>
+                         <div class="dlg-actions">
+                            <button class="btn btn-blue" data-inq="${i}">Inquiry</button>
+                            <button class="btn btn-grey" data-close>Close</button>
+                         </div>`;
+            }
+            detailBody.innerHTML = body;
+            detailDlg.showModal();
+            detailDlg.scrollTop = 0;
+        }
+
+        let closeTimer;
+        function resetEnq() { clearTimeout(closeTimer); enqDlg.classList.remove('done'); }
+        enqDlg.addEventListener('close', resetEnq);
+        function toast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg; t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 3500);
+        }
+        const TICK = '<svg viewBox="0 0 52 52"><circle class="c" cx="26" cy="26" r="24"/><path class="p" d="M14 27l8 8 16-17"/></svg>';
+        const CROSS = '<svg viewBox="0 0 52 52"><circle class="c" cx="26" cy="26" r="24"/><path class="p" d="M17 17l18 18M35 17L17 35"/></svg>';
+        function showResult(ok, name, mailLink) {
+            document.getElementById('enqRes').className = 'res ' + (ok ? 'ok' : 'bad');
+            document.getElementById('resIcon').innerHTML = ok ? TICK : CROSS;
+            document.getElementById('resTitle').textContent = ok ? 'Inquiry Sent!' : 'Could not send';
+            document.getElementById('resMsg').textContent = ok
+                ? 'Thank you' + (name ? ', ' + name : '') + '. We have received your inquiry and will reply as soon as possible.'
+                : 'Please check your internet connection and try again, or send it from your email app.';
+            const act = document.getElementById('resActions');
+            act.innerHTML = ok
+                ? '<button type="button" class="btn btn-grey" data-close>Close now</button>'
+                : '<button type="button" class="btn btn-blue" id="tryAgain">Try again</button><a class="btn btn-grey" href="' + mailLink + '">Use email app</a>';
+            if (!ok) document.getElementById('tryAgain').onclick = () => enqDlg.classList.remove('done');
+            enqDlg.classList.add('done');
+            if (ok) closeTimer = setTimeout(() => { enqDlg.close(); toast('\u2713 Inquiry sent - we will reply soon'); }, 4000);
+        }
+
+        function openInquiry(name) {
+            document.getElementById('fProduct').value = name;
+            document.getElementById('fMsg').value = '';
+            resetEnq();
+            document.getElementById('sendBtn').disabled = false;
+            document.getElementById('sendBtn').textContent = 'Send Inquiry';
+            enqDlg.showModal();
+        }
+
+        document.addEventListener('click', e => {
+            const learn = e.target.closest('[data-learn]');
+            const inq = e.target.closest('[data-inq]');
+            const close = e.target.closest('[data-close]');
+            if (learn) { openDetail(+learn.dataset.learn); return; }
+            if (inq) {
+                const p = PRODUCTS[+inq.dataset.inq];
+                let name = p.title;
+                if (inq.dataset.v !== undefined) name += " – " + p.variants[+inq.dataset.v].name;
+                detailDlg.close();
+                openInquiry(name);
+                return;
+            }
+            if (close) { close.closest('dialog').close(); return; }
+            if (e.target === detailDlg || e.target === enqDlg) e.target.close();
+        });
+        document.getElementById('generalInquiry').addEventListener('click', () => openInquiry('General enquiry'));
+
+        // ============ SEND INQUIRY ============
+        function buildMessage() {
+            const g = id => document.getElementById(id).value.trim();
+            return [
+                "Hello TSK Equipment Service and Machinery Trading LLC,",
+                "I would like a quotation / more details for: " + g('fProduct'),
+                "",
+                "Name: " + g('fName'),
+                "Phone: " + g('fPhone'),
+                "Email: " + g('fEmail'),
+                "Requirement: " + g('fMsg')
+            ].join("\n");
+        }
+        document.getElementById('sendBtn').addEventListener('click', async () => {
+            const form = document.getElementById('enqForm');
+            if (!form.reportValidity()) return;
+            const btn = document.getElementById('sendBtn');
+            const text = buildMessage();
+            const g = id => document.getElementById(id).value.trim();
+            btn.disabled = true; btn.innerHTML = '<span class="spin"></span>Sending...';
+            let ok = false;
+            try {
+                const r = await fetch("https://formsubmit.co/ajax/" + MAIL_TO, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify({
+                        _subject: "Inquiry: " + g('fProduct'), _template: "table", _captcha: "false",
+                        Product: g('fProduct'), Name: g('fName'), Phone: g('fPhone'), email: g('fEmail'), Requirement: g('fMsg')
+                    })
+                });
+                const d = await r.json().catch(() => ({}));
+                ok = r.ok && (d.success === true || d.success === "true");
+            } catch (err) { ok = false; }
+            const mailLink = "mailto:" + MAIL_TO + "?subject=" + encodeURIComponent("Inquiry: " + g('fProduct')) + "&body=" + encodeURIComponent(text);
+            const name = g('fName');
+            if (ok) ['fName', 'fPhone', 'fEmail', 'fMsg'].forEach(id => document.getElementById(id).value = '');
+            showResult(ok, name, mailLink);
+            btn.disabled = false; btn.textContent = 'Send Inquiry';
+        });
+
+        // ============ FLOATING WHATSAPP (two numbers) ============
+        const waBtn = document.getElementById('waBtn');
+        const waMenu = document.getElementById('waMenu');
+        waMenu.innerHTML = WA_NUMBERS.map(w => `<a href="https://wa.me/${w.num}" target="_blank" rel="noopener">&#128172; ${w.label}</a>`).join('');
+        waBtn.addEventListener('click', e => {
+            e.stopPropagation();
+            if (WA_NUMBERS.length === 1) { window.open("https://wa.me/" + WA_NUMBERS[0].num, "_blank"); return; }
+            const open = waMenu.classList.toggle('open');
+            waBtn.setAttribute('aria-expanded', open);
+        });
+        document.addEventListener('click', e => {
+            if (!e.target.closest('.wa-wrap')) { waMenu.classList.remove('open'); waBtn.setAttribute('aria-expanded', false); }
+        });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') waMenu.classList.remove('open'); });
+
+        // ============ FADE-IN ON SCROLL ============
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    </script>
+</body>
+</html>
