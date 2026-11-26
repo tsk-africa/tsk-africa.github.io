@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TSK Equipment Service and Machinery Trading LLC | Industrial Machinery, Africa</title>
-    <meta name="description" content="TSK Equipment Service and Machinery Trading LLC, Africa. Plasma, laser and water jet cutting machines, welding machinery and spare parts.">
+    <meta name="description" content="TSK Equipment Service and Machinery Trading LLC, Africa. Plasma, laser and water jet cutting machines, welding machinery, fume filters, offshore engineering equipment and spare parts.">
     <link rel="preload" as="image" href="logo.jpg">
     <style>
         :root {
@@ -324,7 +324,7 @@
             </p>
             <div class="stats reveal">
                 <div class="stat"><strong>20+</strong>Years of Experience</div>
-                <div class="stat"><strong>6</strong>Machinery Categories</div>
+                <div class="stat"><strong>9</strong>Machinery Categories</div>
                 <div class="stat"><strong class="small">8 am to 5 pm</strong>Mon to Sat Customer Support</div>
             </div>
             <div class="why reveal">
@@ -427,16 +427,17 @@
         ];
 
         // ============ PRODUCT LIST (edit text here) ============
+        // NOTE: in picture names, "&" is written as %26 and a space as %20.
         const PRODUCTS = [
             {
                 title: "Plasma Cutting Machines",
                 spec: "Plasma & oxyfuel cutting · up to 300 mm",
                 desc: "High-speed CNC plasma cutting for steel, stainless steel and aluminium plate with clean, precise edges.",
-                bg: "url('plasma_cutting_out.jpeg')",
+                bg: "url('plasma_cutting_in_first.PNG')",
                 intro: "We supply two plasma cutting machine models:",
                 variants: [
                     {
-                        name: "ELEMENT 400", img: "plasma_cutting_in.jpeg",
+                        name: "ELEMENT 400", img: "plasma_cutting_in_first.PNG",
                         desc: "Flexible CNC plate processing machine for plasma and oxyfuel cutting, with high-speed lifters and optional bevel units.",
                         highlights: [
                             "Precision plasma cutting of mild steel, stainless steel and aluminium (non-ferrous up to 150 mm)",
@@ -477,6 +478,48 @@
                             ["Software", "Nesting and IoT software available (optional)"]
                         ],
                         note: "Working width applies to machines with vertical torch units and one tool per plate. Other sizes on request."
+                    }
+                ]
+            },
+            {
+                title: "Plasma Cutters (Hypertherm)",
+                spec: "Powermax 45 – 125 A · Max Pro 200 · Consumables",
+                desc: "Hypertherm air plasma cutters, conventional plasma, SmartSync torches and plasma consumables for fabrication and repair work.",
+                bg: "url('plasma_in%26out.PNG')",
+                intro: "We supply two plasma ranges from Hypertherm, the world's most requested plasma brand:",
+                variants: [
+                    {
+                        name: "Powermax Air Plasma Cutters", img: "plasma_in%26out.PNG",
+                        desc: "Powermax SYNC and Powermax 125 air plasma systems, trusted by metal fabricators for versatility, productivity and precision, with lower operating costs and part-to-part consistency.",
+                        highlights: [
+                            "Five systems from 45 A to 125 A output for light workshop to heavy fabrication work",
+                            "Recommended cut thickness from 16 mm up to 38 mm, maximum cut up to 44 mm",
+                            "Severance (edge-start) cut capacity up to 57 mm",
+                            "Powermax 45 SYNC weighs only 14 kg for easy site and workshop use",
+                            "SmartSync torches and genuine consumables available for every model"
+                        ],
+                        specs: [
+                            ["Powermax 45 SYNC", "10–45 A · Recommended 16 mm · Maximum 19 mm · Severance 29 mm · 14 kg"],
+                            ["Powermax 65 SYNC", "20–65 A · Recommended 20 mm · Maximum 25 mm · Severance 32 mm · 29 kg"],
+                            ["Powermax 85 SYNC", "25–85 A · Recommended 25 mm · Maximum 32 mm · Severance 38 mm · 32 kg"],
+                            ["Powermax 105 SYNC", "30–105 A · Recommended 32 mm · Maximum 38 mm · Severance 50 mm · 45 kg"],
+                            ["Powermax 125", "30–125 A · Recommended 38 mm · Maximum 44 mm · Severance 57 mm · 47 kg"]
+                        ]
+                    },
+                    {
+                        name: "Max Pro 200, SmartSync Torches & Consumables", img: "plasma_in.PNG",
+                        desc: "Conventional plasma for demanding cutting, plus the torches and consumables that keep every Hypertherm system cutting at its best.",
+                        highlights: [
+                            "MAX PRO 200 conventional plasma system",
+                            "SmartSync torches for Powermax systems",
+                            "Plasma consumables: nozzles, electrodes, shields and retaining caps",
+                            "Parts for other Hypertherm plasma, waterjet and laser systems on request"
+                        ],
+                        specs: [
+                            ["Conventional plasma", "MAX PRO 200"],
+                            ["Torches", "SmartSync torches"],
+                            ["Consumables", "Plasma consumables for Powermax and other Hypertherm systems"]
+                        ]
                     }
                 ]
             },
@@ -542,11 +585,11 @@
                 title: "Welding Machinery",
                 spec: "MIG/MAG · TIG · MMA · Engine driven",
                 desc: "MIG, TIG and arc welding equipment built for heavy-duty industrial use, from portable machines to engine-driven welders.",
-                bg: "url('WeldingMachinery.jpg')",
+                bg: "url('welding_machine_in%26out.PNG')",
                 intro: "We supply two welding machinery ranges:",
                 variants: [
                     {
-                        name: "MIG/MAG, TIG & MMA Welding Machines", img: "WeldingMachinery.jpg",
+                        name: "MIG/MAG, TIG & MMA Welding Machines", img: "welding_machine_in%26out.PNG",
                         desc: "Professional welding equipment from portable stick machines to heavy-duty industrial MIG/MAG systems, with guns, torches and accessories.",
                         highlights: [
                             "Portable machines for site work up to industrial systems for shipyards, offshore and pipelines",
@@ -565,7 +608,7 @@
                         ]
                     },
                     {
-                        name: "Engine Driven Welders", img: "weldingmachinenew.png",
+                        name: "Engine Driven Welders", img: "welding_machine_in.PNG",
                         desc: "Silenced engine-driven welders for site, pipeline and workshop use. Weld and run auxiliary power from one machine.",
                         highlights: [
                             "Stick, TIG, MIG/MAG and flux-cored welding on multi-process models",
@@ -584,6 +627,132 @@
                             ["TS EVO", "TS 300 / 400 / 600 EVO – stick and scratch-start TIG"],
                             ["TS EVO MULTI4", "TS 400 / 600 EVO MULTI4 and TS 2x280 EVO MULTI4 – multi-process"],
                             ["Engines", "Honda, Yanmar, Kohler, Perkins, Deutz, Kubota"]
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Fume Filter",
+                spec: "Mobile welding fume extraction · KEMPER",
+                desc: "Mobile suction units for welding fume extraction, from occasional to permanent use, with W3 approval for chrome-nickel steel.",
+                bg: "url('FUME_FILTER_in%26out.png')",
+                img: "FUME_FILTER_in%26out.png",
+                highlights: [
+                    "Mobile units with high mobility and a 360° operating radius, suited to every changing workplace",
+                    "Disposable filters from 13 m² to 42 m², or cleanable filters as required",
+                    "W3 approval makes the units suitable for welding chrome-nickel steel and other high alloy steel",
+                    "Exhaust arm needs less adjustment thanks to the exhaust hood design",
+                    "Filter monitoring for increased safety",
+                    "Flexible use with hose connection"
+                ],
+                specs: [
+                    ["Brand", "KEMPER"],
+                    ["Models", "MAXIFIL fume filter · PROFIMASTER fume filter · KEMTAB"],
+                    ["Applications", "Welding fume extraction; high alloy steel; low amounts of smoke and dust; occasional to permanent use"],
+                    ["Properties", "Rotating exhaust hood · W3/IFA-certified · Hose connector · Handle with cable holder · Three-stage filter · Exhaust arm"],
+                    ["Filter area", "13 m² to 42 m² (disposable) or cleanable filters"]
+                ]
+            },
+            {
+                title: "Offshore Engineering Industry",
+                spec: "H-beam lines · Pile foundation · Pipe cutting",
+                desc: "Production lines and cutting machines for offshore platforms, wind power foundations and large pipe processing.",
+                bg: "url('Offshore%20Engineering%20Industry.PNG')",
+                img: "Offshore%20Engineering%20Industry.PNG",
+                intro: "We supply the following equipment for the offshore engineering industry:",
+                variants: [
+                    {
+                        name: "H Beam Production Line",
+                        desc: "Automatic H beam production line covering beam loading, feeding-in, inspection, scanning, chamfering, marking, cutting and feeding-out in one continuous process.",
+                        highlights: [
+                            "One-stop solution: flange chamfering, laser marking and 3D cutting",
+                            "Automatic marking of beams and automatic cutting of beam in one pass",
+                            "Connects with nesting software, graphic database, energy consumption collection and consumables statistics",
+                            "Links to MES production management information"
+                        ],
+                        specs: [
+                            ["Flange size", "100–400 mm"],
+                            ["Web size", "100–600 mm"],
+                            ["Processing length", "12,000 mm"],
+                            ["Chamfering", "Milling method, size R2–R3"],
+                            ["Laser marking", "200 W"],
+                            ["Laser cutting", "20 kW"],
+                            ["Floor space", "Approx. 81 × 9 × 4.5 m"]
+                        ]
+                    },
+                    {
+                        name: "PG Beam Welding Line",
+                        desc: "Streamlined welding line for H-beam node designs used in offshore platform trusses, flexible for small batches and multiple variants.",
+                        highlights: [
+                            "Process: three plates loading and flipping, horizontal assembly, weld seams 1 and 2, 180° flipping, weld seams 3 and 4, horizontal straightening, transfer to temporary storage",
+                            "High efficiency with reduced labour requirements",
+                            "Laser-tracked welding seam with automatic start and stop for precision and weld quality",
+                            "Visual operation panel with a working interface that switches quickly"
+                        ],
+                        specs: [
+                            ["Application", "H-beam node designs for offshore platform trusses"],
+                            ["Production", "Flexible, for small batches and multiple variants"],
+                            ["Configuration", "Tailored to your requirement – contact us"]
+                        ]
+                    },
+                    {
+                        name: "Offshore Wind Power Pile Foundation Production Line",
+                        desc: "Complete monopile production line from plate cutting and beveling to rolling, welding, gouging, coating and painting.",
+                        highlights: [
+                            "Cold cutting with zero heat impact keeps 100 % of the strength of the base material",
+                            "Cold beveling avoids the thermal damage caused by flame and carbon arc beveling",
+                            "Millimeter-precision welding with triple-wire submerged arc welding",
+                            "Automated milling synchronized with multi-wire welding for faster production cycles",
+                            "Multi-head internal and external welding stations",
+                            "Line stations: material cutting, beveling, plate butt welding, preheating, plate rolling, longitudinal and circumferential welding, back gouging, coating and painting"
+                        ],
+                        specs: [
+                            ["Product", "Offshore wind monopile foundations"],
+                            ["Welding", "Triple-wire submerged arc, multi-head internal and external"],
+                            ["Configuration", "Tailored to your requirement – contact us"]
+                        ]
+                    },
+                    {
+                        name: "Large Pipe Cutting Machine",
+                        desc: "Plasma and flame pipe cutting for angle bevel cutting of large pipes, with optimized nesting and multiple programming methods.",
+                        highlights: [
+                            "Angle bevel cutting up to ±65°",
+                            "Comprehensive weld bevel types, connected with TEKLA",
+                            "Direct G-code generation, 3D simulation, node unfolding, long pipe splitting and pipe optimization"
+                        ],
+                        specs: [
+                            ["Pipe diameter", "108 mm to 2000 mm depending on model"],
+                            ["Cutting length", "6000–12,000 mm, can be customized"],
+                            ["Cutting method", "Plasma / flame"],
+                            ["Conveyor", "Roller or roller bed"],
+                            ["Drive system", "Servo motor"],
+                            ["Cutting speed", "10–2000 mm/min"],
+                            ["Moving speed", "10–6000 mm/min"],
+                            ["Length accuracy", "±1.5 mm"],
+                            ["Bevel cutting", "Plasma up to ±45° · Flame (end beveling) up to ±65°"],
+                            ["Dimension / weight", "Approx. 16 × 5 × 3 m · approx. 8 t"]
+                        ]
+                    },
+                    {
+                        name: "Offshore Double-End Cutting Machine",
+                        desc: "Double-end flame cutting system for large, long and thick pipes (up to 100 mm), covering end processing and intersection cutting.",
+                        highlights: [
+                            "Precision double-end cutting: two control units communicate and acquire origin positions automatically for synchronized cutting",
+                            "Intelligent cutting compensation: laser scanning of pipe ovality gives real-time compensation for shape deviations",
+                            "Accurate pipe centering: four-quadrant lasers feed position data to the main console, with touchscreen micro-adjustment in four directions",
+                            "Software connects with Tekla 3D models, supporting components of varying diameters"
+                        ],
+                        specs: [
+                            ["Pipe diameter", "Φ400–1800 mm and Φ1400–2800 mm"],
+                            ["Cutting length", "9000–40,000 mm (tapered dual-head penetration cut)"],
+                            ["Cutting method", "Flame cutting"],
+                            ["Piercing thickness", "6–100 mm"],
+                            ["Cutting speed", "10–700 mm/min"],
+                            ["Moving speed", "10–6000 mm/min"],
+                            ["Single cut length accuracy", "±5 mm"],
+                            ["Bevel cutting", "End bevel up to ±65°"],
+                            ["Max. loading weight", "120 t"],
+                            ["Dimension / weight", "Approx. 50 × 9 × 4.5 m · approx. 65 t"]
                         ]
                     }
                 ]
@@ -654,10 +823,11 @@
             const p = PRODUCTS[i];
             let body = `<h3>${p.title}</h3><div class="spec">${p.spec}</div><p>${p.desc}</p>`;
             if (p.variants) {
+                if (p.img) body += `<img class="main-img" src="${p.img}" alt="${p.title}" onerror="this.style.display='none'">`;
                 body += `<p>${p.intro}</p>`;
                 body += p.variants.map((v, j) => `
                     <div class="variant">
-                        <img src="${v.img}" alt="${v.name}" onerror="this.style.display='none'">
+                        ${v.img ? `<img src="${v.img}" alt="${v.name}" onerror="this.style.display='none'">` : ''}
                         <h4 class="vname">${v.name}</h4>
                         <p>${v.desc}</p>
                         <h4>Key features</h4>${list(v.highlights)}
