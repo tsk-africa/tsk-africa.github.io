@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TSK Equipment Service and Machinery Trading LLC | Industrial Machinery, Africa</title>
     <meta name="description" content="TSK Equipment Service and Machinery Trading LLC, Africa. Plasma, laser and water jet cutting machines, welding machinery, fume filters, offshore engineering equipment and spare parts.">
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="apple-touch-icon" href="logo.jpg">
     <link rel="preload" as="image" href="logo.jpg">
     <style>
         :root {
@@ -206,6 +208,7 @@
         .res .bar i { display: block; height: 100%; background: #17a34a; transform-origin: left; animation: shrink 4s linear forwards; }
         .res.bad .bar, .res.bad .auto { display: none; }
         .res .auto { font-size: 13px; color: #6b7785; }
+        .res .res-why { font-size: 12px; color: #8a95a3; margin-top: 12px; }
         .res .dlg-actions { justify-content: center; }
         @keyframes draw { to { stroke-dashoffset: 0; } }
         @keyframes shrink { to { transform: scaleX(0); } }
@@ -410,6 +413,7 @@
                 <div class="icon-wrap" id="resIcon"></div>
                 <h3 id="resTitle"></h3>
                 <p id="resMsg"></p>
+                <p class="res-why" id="resWhy"></p>
                 <div class="bar"><i></i></div>
                 <p class="auto">This window will close automatically.</p>
                 <div class="dlg-actions" id="resActions"></div>
@@ -485,11 +489,12 @@
                 title: "Plasma Cutters (Hypertherm)",
                 spec: "Powermax 45 – 125 A · Max Pro 200 · Consumables",
                 desc: "Hypertherm air plasma cutters, conventional plasma, SmartSync torches and plasma consumables for fabrication and repair work.",
-                bg: "url('plasma_in%26out.PNG')",
+                bg: "url('plasma_in%26out.jpg')",
+                img: "plasma_in%26out.jpg",
                 intro: "We supply two plasma ranges from Hypertherm, the world's most requested plasma brand:",
                 variants: [
                     {
-                        name: "Powermax Air Plasma Cutters", img: "plasma_in%26out.PNG",
+                        name: "Powermax Air Plasma Cutters",
                         desc: "Powermax SYNC and Powermax 125 air plasma systems, trusted by metal fabricators for versatility, productivity and precision, with lower operating costs and part-to-part consistency.",
                         highlights: [
                             "Five systems from 45 A to 125 A output for light workshop to heavy fabrication work",
@@ -507,7 +512,7 @@
                         ]
                     },
                     {
-                        name: "Max Pro 200, SmartSync Torches & Consumables", img: "plasma_in.PNG",
+                        name: "Max Pro 200, SmartSync Torches & Consumables",
                         desc: "Conventional plasma for demanding cutting, plus the torches and consumables that keep every Hypertherm system cutting at its best.",
                         highlights: [
                             "MAX PRO 200 conventional plasma system",
@@ -863,13 +868,14 @@
         }
         const TICK = '<svg viewBox="0 0 52 52"><circle class="c" cx="26" cy="26" r="24"/><path class="p" d="M14 27l8 8 16-17"/></svg>';
         const CROSS = '<svg viewBox="0 0 52 52"><circle class="c" cx="26" cy="26" r="24"/><path class="p" d="M17 17l18 18M35 17L17 35"/></svg>';
-        function showResult(ok, name, mailLink) {
+        function showResult(ok, name, mailLink, why) {
             document.getElementById('enqRes').className = 'res ' + (ok ? 'ok' : 'bad');
             document.getElementById('resIcon').innerHTML = ok ? TICK : CROSS;
             document.getElementById('resTitle').textContent = ok ? 'Inquiry Sent!' : 'Could not send';
             document.getElementById('resMsg').textContent = ok
                 ? 'Thank you' + (name ? ', ' + name : '') + '. We have received your inquiry and will reply as soon as possible.'
-                : 'Please check your internet connection and try again, or send it from your email app.';
+                : 'We could not send it automatically. Please try again, or send it from your email app.';
+            document.getElementById('resWhy').textContent = (!ok && why) ? 'Details: ' + why : '';
             const act = document.getElementById('resActions');
             act.innerHTML = ok
                 ? '<button type="button" class="btn btn-grey" data-close>Close now</button>'
@@ -926,7 +932,7 @@
             const text = buildMessage();
             const g = id => document.getElementById(id).value.trim();
             btn.disabled = true; btn.innerHTML = '<span class="spin"></span>Sending...';
-            let ok = false;
+            let ok = false, why = '';
             try {
                 const r = await fetch("https://formsubmit.co/ajax/" + MAIL_TO, {
                     method: "POST",
@@ -938,11 +944,13 @@
                 });
                 const d = await r.json().catch(() => ({}));
                 ok = r.ok && (d.success === true || d.success === "true");
-            } catch (err) { ok = false; }
+                if (!ok) why = (d.message ? d.message : 'server replied ' + r.status);
+            } catch (err) { ok = false; why = 'network problem (' + err.message + ')'; }
+            if (!ok) console.error('Inquiry email failed:', why);
             const mailLink = "mailto:" + MAIL_TO + "?subject=" + encodeURIComponent("Inquiry: " + g('fProduct')) + "&body=" + encodeURIComponent(text);
             const name = g('fName');
             if (ok) ['fName', 'fPhone', 'fEmail', 'fMsg'].forEach(id => document.getElementById(id).value = '');
-            showResult(ok, name, mailLink);
+            showResult(ok, name, mailLink, why);
             btn.disabled = false; btn.textContent = 'Send Inquiry';
         });
 
